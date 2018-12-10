@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      .bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url(./pic.jpg) no-repeat #000;
+        background-size: cover; /* 铺满屏幕，屏幕变小，图片可能显示不下 */
+        background-size: 100% 100%; /* 铺满屏幕，随屏幕变化而变化比例，图片可能被拉伸 */
+      }
+      @media screen and (orientation: portrait) {
+        /* 竖屏 */
+      }
+      @media screen and (orientation: landscape) {
+        /* 横屏 */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg"></div>
+    <script src="jquery-2.1.4.min.js"></script>
+    <script>
+      // 直接在最外层的div调用该函数即可
+      changeOrientation($(".bg"));
+
+      function changeOrientation($print) {
+        var width = document.documentElement.clientWidth;
+        var height = document.documentElement.clientHeight;
+        if (width < height) {
+          // 竖屏
+          $print.width(height);
+          $print.height(width);
+          $print.css("top", (height - width) / 2);
+          $print.css("left", 0 - (height - width) / 2);
+          $print.css("transform", "rotate(90deg)");
+          $print.css("transform-origin", "50% 50%");
+        }
+
+        var evt =
+          "onorientationchange" in window ? "orientationchange" : "resize";
+
+        window.addEventListener(
+          evt,
+          function() {
+            console.log(evt);
+            setTimeout(function() {
+              var width = document.documentElement.clientWidth;
+              var height = document.documentElement.clientHeight;
+              if (width > height) {
+                // 横屏
+                $print.width(width);
+                $print.height(height);
+                $print.css("top", 0);
+                $print.css("left", 0);
+                $print.css("transform", "none");
+                $print.css("transform-origin", "50% 50%");
+              } else {
+                // 竖屏
+                $print.width(height);
+                $print.height(width);
+                $print.css("top", (height - width) / 2);
+                $print.css("left", 0 - (height - width) / 2);
+                $print.css("transform", "rotate(90deg)");
+                $print.css("transform-origin", "50% 50%");
+              }
+            }, 300);
+          },
+          false
+        );
+      }
+    </script>
+  </body>
+</html>
