@@ -1,0 +1,130 @@
+.tagSelect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1002;
+  .tagContent {
+    position: absolute;
+    top: 50%;
+    width: 680px;
+    left: 50%;
+    margin-left: -340px;
+    margin-top: -270px;
+    border-radius: 5px;
+    z-index: 65;
+    .titleBox {
+      padding: 10px 15px;
+      background: #f0f2f5;
+      display: flex;
+      color: rgba(66, 66, 66, 1);
+      font-size: 16px;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      .title {
+        flex: 1;
+      }
+      .close {
+        flex: 0 0 auto;
+        cursor: pointer;
+      }
+    }
+    .content {
+      background: #fff;
+      display: flex;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+      padding-bottom: 20px;
+      padding-right: 20px;
+      padding-top: 15px;
+      .leftContent {
+        flex: 1;
+        padding: 0 15px 0 20px;
+        border-right: 1px solid #ededed;
+        .search {
+          display: flex;
+          .searchIcon {
+            font-size: 18px;
+          }
+          .input {
+            border: none;
+          }
+          .ant-input:focus {
+            box-shadow: 0 0 0 0 transparent;
+          }
+        }
+        .tagList {
+          height: 415px;
+          margin-top: 10px;
+          overflow-y: auto;
+          overflow-x: hidden;
+          ul {
+            display: flex;
+            flex-wrap: wrap;
+            li {
+              width: 80px;
+              margin-right: 8px;
+              cursor: pointer;
+              margin-bottom: 10px;
+              text-align: center;
+              border: 1px solid rgba(238, 238, 238, 1);
+              border-radius: 3px;
+              span {
+                font-size: 12px;
+              }
+            }
+          }
+        }
+        .butttonBox {
+          padding-top: 10px;
+          .primary {
+            margin-right: 10px;
+            width: 70px;
+            height: 34px;
+            padding: 0;
+          }
+          .cancel {
+            width: 70px;
+            height: 34px;
+            padding: 0;
+          }
+        }
+      }
+      .rightContent {
+        flex: 1;
+        padding: 0 0 0 15px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        max-height: 460px;
+        position: relative;
+        .tagBox {
+          h3 {
+            font-size: 16px;
+            color: rgba(66, 66, 66, 1);
+            padding-bottom: 10px;
+          }
+          .tag {
+            ul {
+              display: flex;
+              flex-wrap: wrap;
+              li {
+                width: 80px;
+                border: 1px solid #ccc;
+                margin-right: 8px;
+                margin-bottom: 10px;
+                text-align: center;
+                border-radius: 3px;
+                cursor: pointer;
+                span {
+                  font-size: 12px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

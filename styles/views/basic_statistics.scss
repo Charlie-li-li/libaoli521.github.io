@@ -1,0 +1,42 @@
+.basic-content {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background: #f0f2f5;
+  &-top {
+    padding: 30px 40px 0 40px;
+    width: 80%;
+    margin: 0 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+
+    div {
+      background-size: contain;
+    }
+    &-left {
+      background: url("../../static/react-static/pcvip/imgs/title.png")
+        no-repeat center center;
+      width: 201px;
+      height: 52px;
+    }
+    &-right {
+      background: url("../../static/react-static/pcvip/imgs/button.png")
+        no-repeat center center;
+      width: 145px;
+      height: 66px;
+      cursor: pointer;
+    }
+  }
+  &-main {
+    padding: 0 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &-img {
+      width: 80%;
+    }
+  }
+}

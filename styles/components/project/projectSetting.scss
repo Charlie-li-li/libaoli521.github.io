@@ -1,0 +1,64 @@
+.ant-modal.project-create {
+  height: 522px;
+  .ant-modal-content {
+    border-radius: 0;
+    .ant-modal-close {
+      .ant-modal-close-x {
+        height: 60px;
+        width: 60px;
+        line-height: 60px;
+      }
+    }
+    .ant-modal-header {
+      padding: 0;
+      border-radius: 0;
+      .ant-modal-title {
+        font-size: 16px !important;
+        color: #424242 !important;
+        height: 60px;
+        line-height: 60px;
+        text-align: center;
+      }
+    }
+    .ant-modal-body {
+      padding: 0;
+      .projectModalContent {
+        position: relative;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        .ant-menu {
+          min-height: 437px;
+          width: 110px;
+          .ant-menu-item {
+            padding: 0 12px;
+            margin: 0;
+            height: 44px;
+            line-height: 44px;
+            border-left: solid 3px #fff;
+            border-bottom: 1px solid rgba(245, 245, 245, 1);
+          }
+          .ant-menu-item-selected {
+            border-left: solid 3px #64b5f6;
+            border-bottom: 1px solid rgba(245, 245, 245, 1);
+            background: #fff;
+            color: #64b5f6;
+          }
+          .ant-menu-item-active {
+            color: #64b5f6;
+          }
+        }
+        .modalcontentRight {
+          width: 490px;
+          .rightTop {
+            height: 367px;
+            overflow-y: auto;
+          }
+        }
+      }
+    }
+    .ant-modal-footer {
+      display: none;
+    }
+  }
+}

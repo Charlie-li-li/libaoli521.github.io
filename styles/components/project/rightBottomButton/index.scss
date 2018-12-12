@@ -1,0 +1,10 @@
+.rightBottomButton {
+  padding: 20px;
+  display: flex;
+  flex-direction: row-reverse;
+  .ant-btn {
+    height: 30px;
+    line-height: 30px;
+    margin-left: 20px;
+  }
+}

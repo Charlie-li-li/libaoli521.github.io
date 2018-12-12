@@ -1,0 +1,134 @@
+.projectFiles {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  .filesTop {
+    flex: 0 0 auto;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    padding: 8px 0 8px 0;
+    .filesBread {
+      flex: 1;
+      span {
+        display: inline-block;
+        max-width: 100px;
+        float: left;
+        margin: 3px 5px 0 0;
+        font-size: 14px;
+      }
+      label {
+        span {
+          color: #277be4;
+          cursor: pointer;
+        }
+        span:hover {
+          color: #72b1ff;
+        }
+      }
+      i {
+        float: left;
+        margin: 9px 5px 0 0;
+        height: 16px;
+      }
+    }
+    .filesSearch {
+      flex: 0 0 auto;
+      padding: 0 0 0 15px;
+    }
+  }
+  .filesBottom {
+    flex: 1;
+    overflow: auto;
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 15px 0 0 0;
+    .table_tit {
+      flex: 0 0 auto;
+      .table_tr {
+        height: 60px;
+        background: #f8f8f8;
+        line-height: 60px;
+        border: 0;
+        .table_td {
+          font-size: 14px;
+          font-weight: bold;
+          color: #5b5b5b;
+        }
+      }
+    }
+    .p {
+      flex: 0 0 auto;
+      margin: 10px 0;
+      color: #000;
+    }
+    .table_cont {
+      flex: 1;
+      overflow: auto;
+      .dataBox {
+        padding: 25px 0 0 0;
+      }
+    }
+    .table_tr {
+      display: flex;
+      width: 100%;
+      height: 60px;
+      line-height: 60px;
+      border-bottom: 1px solid #f0f0f0;
+      font-size: 14px;
+      .table_td:first {
+        flex: 0 0 50%;
+        color: #424242;
+      }
+    }
+    .table_td_more {
+      flex: 2.5 !important;
+      text-align: left !important;
+    }
+    .table_td {
+      flex: 1;
+      padding: 0 15px;
+      text-align: center;
+      color: #bdbdbd;
+      .fileIcon {
+        // font-size: 30px;
+        float: left;
+        margin: 15px 8px 0 0;
+        // color: #fdce05;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+      }
+      .download {
+        font-size: 30px;
+        float: left;
+        margin: 15px 8px 0 0;
+        // color: #65a9ff;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+      }
+      .downloadOthers {
+        background: rgb(91, 174, 246);
+        border-radius: 4px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        div {
+          color: #fff;
+          font-size: 14px;
+        }
+      }
+      span {
+        color: #bdbdbd;
+        cursor: pointer;
+      }
+    }
+    .table_td.table_data_handle {
+      flex: 1.5;
+    }
+    .table_td_Load {
+      cursor: pointer;
+    }
+  }
+}

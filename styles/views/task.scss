@@ -1,0 +1,988 @@
+.ant-layout {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  .ant-layout-content {
+    height: calc(100vh - 70px);
+    @media all and (max-width: 1250px) {
+      /* 宽度小于1250 */
+      .left_menu {
+        display: none;
+      }
+      .contBox {
+        left: 0 !important;
+      }
+    }
+    @media all and (max-width: 1250px) {
+      .disabled {
+        display: none;
+      }
+    }
+    .taskDetailBoxRun {
+      position: fixed;
+      z-index: 50;
+      width: 45%;
+      top: 65px;
+      bottom: 0;
+      right: -47%;
+      background: #fff;
+      box-shadow: 0 0 5px #c9c9c9;
+      border-left: 1px solid #ddd;
+      min-width: 600px;
+    }
+    .taskDetailBox {
+      position: fixed;
+      z-index: 50;
+      width: 45%;
+      top: 65px;
+      bottom: 0;
+      right: 0;
+      background: #fff;
+      box-shadow: 0 0 5px #c9c9c9;
+      border-left: 1px solid #ddd;
+      min-width: 600px;
+    }
+    .left_menu {
+      width: 260px;
+      background: #fff;
+      height: 100%;
+      border-right: 1px solid #e8e8e8;
+      box-shadow: 0px 0px 8px 0px #bdbdbd;
+      z-index: 1;
+      position: relative;
+      .ant-btn {
+        margin: 25px 0 20px 20px;
+        width: 205px;
+        float: left;
+        height: 40px;
+        font-size: 15px;
+        > span {
+          margin: 0 0 0 13px;
+        }
+      }
+      .ant-menu {
+        width: 100%;
+        height: 100%;
+        .ant-menu-submenu-title {
+          font-size: 15px;
+          height: 40px;
+          line-height: 40px;
+          margin: 0 0 1px 0;
+          cursor: inherit;
+          > i {
+            display: none;
+          }
+        }
+        .ant-menu-submenu-title:hover,
+        .ant-menu-submenu-title:active {
+          color: #333333;
+          background: none;
+        }
+        > li {
+          font-size: 13px;
+          color: #333333;
+        }
+        .ant-menu-item-active {
+          background: #e9f5ff;
+        }
+        .ant-menu-item-selected {
+          background: #cee3fd;
+          color: #267ae5;
+        }
+        ul > li:hover {
+          background: #e9f5ff;
+        }
+        ul > li {
+          padding-left: 63px !important;
+        }
+        ul > li,
+        .ant-menu-item {
+          height: 40px;
+          line-height: 40px;
+          margin: 0 0 1px 0;
+          svg {
+            margin: 0 10px 0 0;
+          }
+        }
+      }
+    }
+    .contBox {
+      position: absolute;
+      flex-flow: column nowrap;
+      top: 0;
+      left: 250px;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      overflow: hidden;
+      .topBox {
+        flex: 0 0 auto;
+        .titRow {
+          background: #fff;
+          position: relative;
+          h1 {
+            font-size: 20px;
+            margin: 0;
+            padding: 25px 15px 20px 20px;
+            position: relative;
+            .line {
+              width: 100%;
+              margin: 20px 0 0 0;
+              height: 1px;
+              float: left;
+              position: relative;
+              padding: 0 0 0 62px;
+              .lin {
+                width: 100%;
+                height: 1px;
+                background: #e9e9e9;
+              }
+              i {
+                position: absolute;
+                color: #909294;
+                font-size: 18px;
+                top: -10px;
+                cursor: pointer;
+                left: 36px;
+              }
+              span {
+                position: absolute;
+                left: 0;
+                font-size: 14px;
+                color: #909294;
+                top: -12px;
+                cursor: pointer;
+              }
+            }
+            span {
+              float: left;
+            }
+            .ant-dropdown-link {
+              font-size: 14px;
+              font-weight: 100;
+              line-height: 22px;
+              margin: 2px 0 0 15px;
+              color: #267ae5;
+              float: left;
+            }
+            > i {
+              float: right;
+              margin: 20px 0 0 10px;
+              font-size: 12px;
+              font-weight: lighter;
+              cursor: pointer;
+            }
+            i:hover,
+            span:hover {
+              color: #277be4;
+            }
+            .searchClose {
+              position: absolute;
+              right: 24px;
+              z-index: 1;
+              top: 30px;
+              font-size: 12px;
+              display: inline-block;
+              //       background: #edf7ff;
+              color: #267ae5;
+              height: 20px;
+              line-height: 20px;
+              cursor: pointer;
+            }
+            .ant-input-search {
+              float: right;
+              padding: 0;
+              .ant-input {
+                border-radius: 3px;
+                background: #edf7ff;
+                height: 30px;
+              }
+            }
+          }
+        }
+        .noTaskSelect {
+          display: none;
+        }
+        .taskSelect {
+          width: 260px;
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          top: 150px;
+          background: #fff;
+          border-left: 1px solid #e8e8e8;
+          box-shadow: 0px 0px 8px 0px #dbdbdb;
+          padding: 0 0 0 15px;
+          color: #bdbdbd;
+          font-size: 12px;
+          z-index: 30;
+          display: flex;
+          flex-direction: column;
+          .topMenu {
+            display: flex;
+            height: 40px;
+            line-height: 40px;
+            flex: 0 0 auto;
+            padding: 0 15px 0 0;
+            .childMenu {
+              flex: 0 0 auto;
+              margin-right: 20px;
+              cursor: pointer;
+              position: relative;
+            }
+            .blue {
+              color: #64b5f6;
+              position: relative;
+              em {
+                display: block;
+                border-bottom: 2px solid #64b5f6;
+                width: 10px;
+                margin-left: 8px;
+                margin-top: -4px;
+                position: absolute;
+                bottom: 8px;
+              }
+            }
+            .close {
+              flex: 1;
+              text-align: right;
+              cursor: pointer;
+              .icon-close {
+                font-size: 16px;
+                color: #757575;
+              }
+            }
+          }
+          .selectContent {
+            overflow-x: hidden;
+            flex: 1;
+            .allSort {
+              overflow-y: auto;
+              overflow-x: hidden;
+              position: absolute;
+              bottom: 40px;
+              top: 40px;
+              right: 0;
+              left: 15px;
+            }
+            .sortBox {
+              margin-top: 8px;
+              .ant-radio,
+              .ant-radio-wrapper {
+                font-size: 14px;
+                color: #424242;
+              }
+              .ant-radio-wrapper {
+                margin-bottom: 10px;
+                display: flex;
+                align-items: center;
+              }
+              .ant-radio-inner {
+              }
+            }
+            .sortBottom {
+              color: #1e88e5;
+              font-size: 14px;
+              padding: 15px 0;
+              border-top: 1px solid #eee;
+              margin-right: 15px;
+              margin-top: 15px;
+              span {
+                padding-left: 5px;
+                cursor: pointer;
+              }
+              i {
+                font-size: 14px;
+              }
+            }
+            .selectType {
+              padding: 0 15px 0 0;
+              position: relative;
+              h3 {
+                font-size: 14px;
+                color: #424242;
+                margin: 0;
+                padding: 8px 0;
+                div {
+                  width: 16px;
+                  height: 16px;
+                  color: #bdbdbd;
+                  display: inline-block;
+                  margin-top: 0;
+                  padding-left: 8px;
+                  i {
+                    cursor: pointer;
+                  }
+                }
+              }
+              .tagBox {
+                ul {
+                  display: flex;
+                  flex-wrap: wrap;
+                  li {
+                    position: relative;
+                    border: 1px solid;
+                    cursor: pointer;
+                    width: 33.33%;
+                    text-align: center;
+                    border-radius: 3px;
+                    margin-bottom: 8px;
+                    .labelname {
+                      font-size: 12px;
+                    }
+                    .labelCen {
+                      display: none;
+                    }
+                  }
+                  li:hover {
+                    .labelCen {
+                      font-size: 12px;
+                      display: inline-block;
+                      background: rgba(66, 66, 66, 0.5);
+                      color: #fff;
+                      text-align: center;
+                      position: absolute;
+                      top: 0;
+                      left: 0;
+                      right: 0;
+                    }
+                  }
+                }
+              }
+              .projectBox {
+                padding-left: 15px;
+                > div {
+                  font-size: 12px;
+                  display: block;
+                  background: whitesmoke;
+                  color: #757575;
+                  border: 1px solid #eee;
+                  padding-left: 10px;
+                  border-radius: 3px;
+                  margin-bottom: 8px;
+                  height: 30px;
+                  line-height: 30px;
+                  width: 214px;
+                  position: relative;
+                  .projectCen {
+                    display: none;
+                  }
+                }
+                > div:hover {
+                  .projectCen {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    text-align: center;
+                    border-radius: 3px;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 40;
+                    color: #fff;
+                    background: rgba(66, 66, 66, 0.5);
+                    display: block;
+                    cursor: pointer;
+                  }
+                }
+              }
+              .userBox {
+                .userSel {
+                  background: whitesmoke;
+                  border-radius: 15px;
+                  position: relative;
+                  cursor: pointer;
+                  display: flex;
+                  align-items: center;
+                  width: 80px;
+                  overflow: hidden;
+                  .userName {
+                    width: 24px;
+                    height: 24px;
+                    border-radius: 50%;
+                    background: #5c6bc0;
+                    display: inline-block;
+                    overflow: hidden;
+                    font {
+                      font-size: 12px;
+                      transform: scale(0.8);
+                      color: #fff;
+                      line-height: 24px;
+                      display: inline-block;
+                    }
+                    img {
+                      width: 100%;
+                      height: 100%;
+                    }
+                  }
+                  span {
+                    font-size: 12px;
+                    color: #757575;
+                    padding: 0 0 0 8px;
+                    display: inline-block;
+                  }
+                  .userCen {
+                    display: none;
+                  }
+                }
+              }
+              .userSel:hover {
+                .userCen {
+                  background: rgba(66, 66, 66, 0.5);
+                  color: #fff;
+                  text-align: center;
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  right: 0;
+                  border-radius: 15px;
+                  display: block;
+                }
+              }
+              .null {
+                margin-left: 15px;
+                font-size: 12px;
+                border-bottom: 1px solid #eee;
+                cursor: pointer;
+                height: 30px;
+                line-height: 30px;
+                padding-bottom: 5px;
+                .choose {
+                  display: none;
+                }
+              }
+              .null:hover {
+                .noChoose {
+                  display: none;
+                }
+                .choose {
+                  display: inline-block;
+                }
+              }
+              .dateBox {
+                position: absolute;
+                bottom: 0;
+                cursor: pointer;
+                .ant-input {
+                  height: 28px;
+                  margin-right: 15px;
+                  font-size: 12px;
+                  padding: 0 0 8px 55px;
+                  border: none;
+                  background: transparent;
+                  color: inherit;
+                }
+                .ant-calendar-picker {
+                  color: inherit;
+                }
+                .ant-calendar-picker-icon {
+                  color: transparent;
+                }
+                .ant-calendar-range-picker-input::-webkit-input-placeholder {
+                  color: transparent;
+                }
+                .ant-calendar-range-picker-separator {
+                  color: transparent;
+                }
+                .ant-calendar-picker:focus
+                  .ant-calendar-picker-input:not(.ant-input-disabled) {
+                  box-shadow: 0 0 0 0 transparent;
+                }
+                .ant-input:focus {
+                  box-shadow: 0 0 0 0 transparent;
+                }
+                .ant-calendar-range-picker-input {
+                  height: 100%;
+                  width: 36%;
+                }
+                .ant-calendar-picker-clear,
+                .ant-calendar-picker-icon {
+                  right: 25px;
+                  top: 40%;
+                  color: inherit;
+                }
+                .ant-calendar-picker-icon:after {
+                  color: transparent;
+                }
+              }
+              .workTime {
+                background: #fff;
+                border-left: 1px solid #e8e8e8;
+                box-shadow: 0px 0px 8px 0px #dbdbdb;
+                margin-left: 1px;
+                position: absolute;
+                bottom: 25px;
+                border-radius: 3px;
+                .title {
+                  display: flex;
+                  align-items: center;
+                  border-bottom: 1px solid #eee;
+                  padding: 10px 15px;
+                  > div {
+                    flex: 1;
+                    text-align: center;
+                    color: #424242;
+                  }
+                  .close {
+                    cursor: pointer;
+                  }
+                  .check {
+                    color: #64b5f6;
+                    cursor: pointer;
+                  }
+                }
+                .contentBox {
+                  display: flex;
+                  align-items: center;
+                  padding: 15px;
+                  .start {
+                    width: 80px;
+                    .ant-input {
+                      height: 30px;
+                    }
+                  }
+                  .end {
+                    width: 80px;
+                    .ant-input {
+                      height: 30px;
+                    }
+                  }
+                  > span {
+                    padding: 0 15px;
+                    color: #757575;
+                  }
+                }
+              }
+              .selectedList {
+                ul {
+                  margin: 0;
+                  li {
+                    margin-left: 15px;
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    position: relative;
+                    height: 30px;
+                    line-height: 30px;
+                    .check {
+                      position: absolute;
+                      right: 15px;
+                      top: 10px;
+                    }
+                  }
+                  .last {
+                    border-bottom: 1px solid #eee;
+                    cursor: pointer;
+                    height: 30px;
+                    line-height: 30px;
+                    padding-bottom: 5px;
+                    .lastCen {
+                      width: 80%;
+                      height: 100%;
+                      background: #fff;
+                      position: static;
+                      z-index: 20;
+                    }
+                  }
+                }
+              }
+            }
+            .mainOne {
+              display: flex;
+              align-items: center;
+              padding-top: 15px;
+              .icon {
+                color: #1e88e5;
+                cursor: pointer;
+                width: 16px;
+                height: 16px;
+              }
+              span {
+                padding-left: 5px;
+                color: #1e88e5;
+                font-size: 14px;
+                cursor: pointer;
+              }
+            }
+            .clearBox {
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              padding: 0 0 0 15px;
+              height: 40px;
+              line-height: 38px;
+              border-top: 1px solid #eee;
+              .clearSelect {
+                color: #1e88e5;
+                font-size: 12px;
+                cursor: pointer;
+              }
+              .taskNum {
+                float: right;
+                color: #bdbdbd;
+                font-size: 12px;
+                padding-right: 15px;
+              }
+            }
+            .selectBox {
+              padding-bottom: 10px;
+              background: #fff;
+              position: relative;
+              .addBox {
+                background: #fff;
+                position: absolute;
+                bottom: 30px;
+                left: 0;
+                right: 0;
+                border-radius: 5px;
+                margin-right: 15px;
+                margin-left: 1px;
+                border-left: 1px solid #e8e8e8;
+                z-index: 35;
+                box-shadow: 0px 0px 8px 0px #dbdbdb;
+                display: flex;
+                flex-direction: column;
+                .addTop {
+                  flex: 0 0 auto;
+                  padding: 15px 0 8px 0;
+                  display: flex;
+                  line-height: 20px;
+                  border-bottom: 1px solid #eee;
+                  span {
+                    flex: 1;
+                    text-align: center;
+                    color: #424242;
+                  }
+                  .closeMore {
+                    flex: 0 0 auto;
+                    color: #bdbdbd;
+                    cursor: pointer;
+                    position: absolute;
+                    right: 10px;
+                    top: 20px;
+                  }
+                }
+                .addContent {
+                  ul {
+                    li {
+                      padding: 0 10px;
+                      display: flex;
+                      align-items: center;
+                      cursor: pointer;
+                      span {
+                        flex: 1;
+                        color: #757575;
+                        padding: 6px 0;
+                      }
+                      .check {
+                        flex: 0 0 auto;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        .searchbb {
+          display: flex;
+          background: #fff;
+          width: 100%;
+          .searchbb_l {
+            flex: 0 0 auto;
+            padding: 0 15px 0 7px;
+            font-size: 16px;
+            line-height: 30px;
+            color: #9b9b9b;
+            > i {
+              cursor: pointer;
+            }
+          }
+          .searchbb_r {
+            flex: 1;
+            padding: 0 15px 0 0;
+          }
+          .ant-dropdown-link {
+            cursor: pointer;
+            height: 30px;
+            color: #1890ff;
+            i {
+              font-size: 17px;
+            }
+          }
+        }
+        .searchRow {
+          width: 100%;
+          height: auto;
+          display: flex;
+          align-items: center;
+          padding: 0 15;
+          background: #fff;
+          margin: 0 0 10px 0;
+          .juese {
+            flex: 0 0 auto;
+            margin: 0 15px 0 0;
+            height: 30px;
+            font-size: 13px;
+            line-height: 30px;
+          }
+          .tit {
+            flex: 0 0 65px;
+            font-size: 13px;
+            margin: 0 15px 0 0;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            color: #000;
+          }
+          .cont {
+            flex: 1;
+            line-height: 0;
+            .userTag .ant-tag {
+              margin: 5px 6px 0 0;
+            }
+            .ant-select-selection {
+              input {
+                max-width: 230px;
+              }
+            }
+            .cpet_tag {
+              display: inline-block;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              margin: 0;
+              font-size: 12px;
+              padding: 0 3px 3px 0;
+            }
+            .ant-input-group {
+              margin: 0;
+              width: auto;
+              display: inline;
+              float: left;
+              .ant-input {
+                height: 30px;
+                font-size: 13px;
+              }
+            }
+            .ant-calendar-picker {
+              width: 250px;
+              margin: 0;
+              .ant-calendar-picker-input {
+                height: 30px;
+                font-size: 13px;
+                .ant-calendar-range-picker-separator {
+                  vertical-align: unset;
+                }
+              }
+            }
+            .dw {
+              line-height: 30px;
+              margin: 0 0 0 10px;
+              font-size: 12px;
+            }
+          }
+          .clear_icon {
+            flex: 0 0 40px;
+            padding: 0 20px 0 0;
+            line-height: 30px;
+            cursor: pointer;
+            font-size: 15px;
+          }
+          .clear_icon:hover {
+            i {
+              color: #277be4;
+            }
+          }
+        }
+        .searchRow:last-of-type {
+          border: 0;
+        }
+        .allBtnRow {
+          display: inline-block;
+          .ant-btn {
+            margin: 0 10px 0 0;
+            font-size: 14px;
+          }
+          .ant-dropdown-link {
+            margin: 0 15px 0 0;
+          }
+          i {
+            float: right;
+            margin: 12px 15px 0 0;
+            cursor: pointer;
+          }
+          i:hover {
+            color: #277be4;
+          }
+        }
+        .listHeaderRow {
+          padding: 0 15px;
+          margin: 15px 0 0 0;
+          .listHeader {
+            background: #fff;
+            padding: 0 15px 15px 15px;
+            border-bottom: 1px solid #eee;
+            font-size: 13px;
+            width: 100%;
+            .ant-select-selection-selected-value {
+              font-size: 13px;
+              color: #ccc;
+            }
+            .ant-checkbox-wrapper {
+              line-height: 32px;
+              span {
+                font-size: 13px;
+              }
+            }
+            .radioGroup {
+              border-bottom: 1px solid #e9e9e9;
+              .rad {
+                border: 1px solid #e9e9e9;
+                border-top-left-radius: 3px;
+                border-top-right-radius: 3px;
+                display: inline-block;
+                padding: 10px 20px;
+                font-size: 14px;
+                margin: 0 5px 0 0;
+                position: relative;
+                bottom: -1px;
+                color: #999999;
+                background: #f6f6f6;
+                cursor: pointer;
+              }
+              .clearChoose {
+                color: #757575;
+                font-size: 12px;
+                cursor: pointer;
+                float: right;
+                margin-top: 10px;
+                margin-right: 10px;
+                text-decoration: underline;
+              }
+              .radOne {
+                width: 15px;
+                margin: 0;
+                background: none;
+                border: 0;
+                padding: 0;
+              }
+              .act {
+                background: #fff;
+                color: #000;
+                border-bottom: 1px solid #fff;
+              }
+              .ant-dropdown-link {
+                font-size: 14px;
+                margin: 0 15px;
+              }
+              .ant-btn {
+                float: right;
+                margin: 0 15px 0 0;
+                svg {
+                  margin: 0 5px 0 0;
+                }
+              }
+            }
+            > span {
+              margin: 0 10px 0 0;
+              line-height: 32px;
+            }
+          }
+        }
+      }
+      .bottomBox {
+        flex: 1;
+        position: relative;
+        overflow: auto;
+        margin: 0 15px 15px 15px;
+        background: #fff;
+        .dataBox {
+          padding: 40px 0 0 0;
+        }
+      }
+    }
+  }
+}
+
+.taskSelectCen {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: rgba(255, 255, 255, 0);
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+}
+.ant-calendar-range .ant-calendar-in-range-cell:before {
+  background: transparent;
+}
+
+.limitModel {
+  .ant-modal-content {
+    border-radius: 2px;
+    .writeBox {
+      .limitMesg {
+        color: #1e88e5;
+        font-size: 16px;
+      }
+      .versionMeg {
+        color: #bdbdbd;
+        font-size: 12px;
+        margin: 0 0 0 8px;
+        cursor: pointer;
+        -webkit-text-decoration: underline;
+        text-decoration: underline;
+      }
+      .text {
+        margin-top: 10px;
+        b {
+          color: #ffa726;
+        }
+        p {
+          margin-bottom: 20px;
+          text-align: justify;
+        }
+      }
+    }
+    .renew {
+      float: right;
+      margin-top: 10px;
+    }
+    .imgBox {
+      position: relative;
+      i {
+        position: absolute;
+        top: 0;
+        right: 0px;
+        font-size: 35px;
+        color: #ccc;
+        cursor: pointer;
+      }
+      i:hover {
+        color: #fff;
+      }
+      p {
+        margin: 0;
+        background: #fff;
+        text-align: center;
+        line-height: 40px;
+        font-size: 20px;
+        border-bottom: 1px solid #eee;
+      }
+      .img {
+        overflow: auto;
+        max-width: 850px;
+        //  max-height: 800px;
+        img {
+          max-width: 100%;
+        }
+      }
+    }
+    .myBorder {
+      height: 1px;
+      background-color: whitesmoke;
+      margin-left: -25px;
+      width: 520px;
+    }
+  }
+}

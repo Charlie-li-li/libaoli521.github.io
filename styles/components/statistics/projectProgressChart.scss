@@ -1,0 +1,89 @@
+.chartBox {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  .chart {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    .top {
+      height: 56px;
+      border-bottom: 1px solid #eee;
+      line-height: 56px;
+      // padding: 0 10px;
+      margin: 0;
+      font-weight: normal;
+      display: flex;
+      align-items: center;
+      .title {
+        margin-left: 16px;
+        font-size: 16px;
+        color: #212121;
+        flex: 1;
+      }
+      ul {
+        flex: 0 0 auto;
+        display: flex;
+        align-items: center;
+        margin: 0;
+        li {
+          font-size: 14px;
+          color: #bdbdbd;
+          cursor: pointer;
+          margin-right: 10px;
+        }
+      }
+      p {
+        flex: 0 0 auto;
+        max-width: 230px;
+        margin: 0;
+        margin-right: 12px;
+        .ant-input {
+          height: 22px;
+          color: rgba(0, 0, 0, 0.65);
+          border: 1px solid #eee;
+          font-size: 14px;
+          padding: 0;
+        }
+        .ant-calendar-range-picker-separator {
+          color: rgba(0, 0, 0, 0.45);
+          font-size: 14px;
+        }
+        .ant-calendar-picker-icon {
+          font-size: 12px;
+          color: rgba(0, 0, 0, 0.25);
+        }
+      }
+    }
+    &-area {
+      width: 100%;
+      height: 100%;
+      flex: 1;
+      display: flex;
+      .chart-boxImg {
+        flex: 1;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+      }
+      .chart-img1 {
+        width: 100%;
+        height: 220px;
+      }
+    }
+  }
+}
+[role="button"],
+a,
+area,
+button,
+input:not([type="range"]),
+label,
+select,
+summary,
+textarea {
+  color: #757575;
+}

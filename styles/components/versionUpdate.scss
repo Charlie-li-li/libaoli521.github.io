@@ -1,0 +1,59 @@
+.upDateTime{
+    margin-bottom: 100px;
+    // text-align: center;
+    // line-height: 40px;
+    padding-left: 30px;
+    padding-top: 30px;
+    cursor: pointer;
+    .upDateTimeNew{
+        color: rgba(30, 136, 229, 1);
+    }
+    div{
+        font-size: 20px;
+    }
+    span{
+        color: rgba(189, 189, 189, 1);
+        font-size: 12px;
+    }
+}
+.ant-modal-body{
+    margin-top: 20px;
+}
+.ant-modal .ant-modal-content{
+    height: 80%;
+    border-radius: 2px;
+    box-shadow: 1px 1px 8px 0px #757575;
+}
+.ant-modal-body::-webkit-scrollbar { width: 0 !important }
+.upMask{
+    border-radius: 0%
+}
+.moreText{
+    margin-top: 30px;
+}
+.moreTextlast{
+    margin-top: 20px;
+}
+.upName{
+    border-left:2px solid rgba(238, 238, 238, 1);
+    padding-top: 15px;
+    div{
+        color: rgba(33, 33, 33, 1);
+        font-size: 18px;
+        padding-left: 32px;
+        padding-bottom: 10px;
+        font-weight: bold;
+    }
+    p{
+        color: rgba(117, 117, 117, 1);
+        font-size: 14px;
+        padding-left: 32px;
+        line-height: 30px;
+    }
+    .demo{
+        color: rgba(100, 181, 246, 1);
+        font-size: 12px;
+        cursor: pointer;
+        float: right;
+    }
+}

@@ -1,0 +1,79 @@
+.authorization {
+  .ant-modal-content {
+    border-radius: 2px;
+  }
+  .ant-modal-body {
+    padding: 20px;
+  }
+  .writeBox {
+    .name {
+      color: #1e88e5;
+      margin-right: 10px;
+      font-size: 16px;
+    }
+    .version {
+      text-decoration: underline;
+      color: #bdbdbd;
+      font-size: 12px;
+    }
+    .myBorder {
+      height: 1px;
+      width: 520px;
+      background-color: rgba(245, 245, 245, 1);
+      margin-left: -20px;
+    }
+    .text {
+      margin-top: 20px;
+      .free {
+        margin-bottom: 20px;
+      }
+      .basic {
+        margin-bottom: 20px;
+      }
+      b {
+        color: rgba(255, 167, 38, 1);
+      }
+    }
+    .renew {
+      margin-top: 20px;
+      float: right;
+      .shouquan {
+        cursor: pointer;
+        text-decoration: underline;
+        margin-right: 10px;
+        font-size: 12px;
+        color: #bdbdbd;
+        vertical-align: bottom;
+      }
+    }
+  }
+  .imgBox {
+    position: relative;
+    i {
+      position: absolute;
+      top: 0;
+      right: 0px;
+      font-size: 35px;
+      color: #ccc;
+      cursor: pointer;
+    }
+    i:hover {
+      color: #fff;
+    }
+    p {
+      margin: 0;
+      background: #fff;
+      text-align: center;
+      line-height: 40px;
+      font-size: 20px;
+      border-bottom: 1px solid #eee;
+    }
+    .img {
+      overflow: auto;
+      max-width: 850px;
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+}

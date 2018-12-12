@@ -1,0 +1,81 @@
+.OpearatePerm {
+  padding: 10px 20px;
+  width: 100%;
+  section {
+    margin-bottom: 18px;
+    width: 100%;
+    .top_title {
+      display: flex;
+      justify-content: flex;
+      align-items: center;
+      padding: 6px 0;
+      span {
+        font-size: 16px;
+        text-align: left;
+        font-family: SourceHanSansSC-regular;
+      }
+      .top_title_info {
+        height: 18px;
+        color: rgba(189, 189, 189, 1);
+        font-size: 12px;
+        text-align: left;
+        font-family: SourceHanSansSC-regular;
+        line-height: 22px;
+        margin-left: 8px;
+      }
+      //       .project_icon {
+      //         position: relative;
+      //         .project_icon_avater {
+      //           position: absolute;
+      //           top: 35px;
+      //           left: 50%;
+      //           margin-left: -35px;
+      //           height: 70px;
+      //           width: 70px;
+      //           line-height: 70px;
+      //           text-align: center;
+      //           .project_icon_avater_img {
+      //             width: 70px;
+      //             height: 70px;
+      //             border-radius: 50%;
+      //           }
+      //         }
+      //       }
+    }
+    .top_content {
+      //       .top_content_input_box {
+      //         width: 340px;
+      //         height: 30px;
+      //         position: relative;
+      //         margin: 6px 0;
+      //         .top_content_input {
+      //           width: 100%;
+      //           height: 100%;
+      //           padding-right: 40px;
+      //           font-size: 16px;
+      //         }
+      //         .top_content_input_after {
+      //           position: absolute;
+      //           top: 0;
+      //           right: 0;
+      //           height: 30px;
+      //           line-height: 30px;
+      //           padding-right: 4px;
+
+      //           span {
+      //             font-size: 12px;
+      //             font-family: "SourceHanSansSC-regular";
+      //             color: "#bdbdbd";
+      //           }
+      //           .maxlength {
+      //             color: red;
+      //           }
+      //         }
+      //       }
+      //       .top_content_area {
+      //         height: 100px;
+      //         resize: none;
+      //       }
+    }
+  }
+}

@@ -1,0 +1,100 @@
+.cpet_tag {
+  margin: 5px 0 0 0;
+  .tagListBox {
+    // padding-left:30px;
+  }
+  .ant-tag {
+    // margin: 3px 0 0 5px;
+    font-size: 12px;
+    border: 1px solid;
+    float: left;
+    padding: 0 !important;
+    position: relative;
+    // width:100px;
+    border-radius: 2px;
+    margin: 0 8px 6px 0;
+    .labelName {
+      width: 70px;
+      height: 22px;
+      // line-height: 17px;
+      line-height: 22px;
+      color: #fff;
+      font-size: 12px;
+      -webkit-text-align: center;
+      text-align: center;
+      font-family: "Roboto";
+      display: inline-block;
+      // border: 1px solid #b0bec5;
+    }
+    svg {
+      position: absolute;
+      top: -8px;
+      right: 3px;
+      color: #a1a1a2 !important;
+      width: 15px;
+      height: 15px;
+      display: none;
+    }
+  }
+  .ant-tag:hover svg {
+    display: block !important;
+  }
+  .addIcon {
+    font-size: 13px;
+    color: #bfc0c6;
+    cursor: pointer;
+    line-height: 22px;
+    padding: 0 8px;
+    // float: left;
+    margin: 3px 0 0 0;
+  }
+  input {
+    float: left;
+  }
+  .ant-input:focus {
+    box-shadow: 0 0 0 transparent;
+  }
+}
+
+.cpet_tag_list {
+  max-width: 500px;
+  max-height: 350px;
+  overflow: auto;
+  .tagDiv {
+    max-width: 600px;
+    overflow: auto;
+    display: flex;
+    border-bottom: 1px solid #eee;
+    padding: 10px 0 0 0;
+    .tagName {
+      font-weight: bold;
+      font-size: 14px;
+      color: #000;
+      flex: 0 0 80px;
+      margin: 0 10px 0 0;
+    }
+    .tagUl {
+      flex: 1;
+      li {
+        float: left;
+        background: #eee;
+        border-radius: 2px;
+        margin: 0 10px 7px 0;
+        padding: 1px 8px;
+        font-size: 12px;
+        cursor: pointer;
+        color: #a3a5b2;
+        // border: 1px solid;
+        width: 70px;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.top_title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+}

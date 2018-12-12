@@ -1,0 +1,498 @@
+.pro_statistics {
+  height: 100%;
+  display: flex;
+  .chartCen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+  }
+  @media all and (max-width: 1250px) {
+    .pro_screen {
+      display: none !important;
+    }
+    .chart-left-fixed {
+      width: 260px;
+      background: #fff;
+      overflow-y: auto;
+      position: fixed !important;
+      bottom: 0;
+      top: 64px;
+      z-index: 1001;
+      height: auto !important;
+      box-shadow: 0px 0px 8px 0px #bdbdbd !important;
+      left: 0 !important;
+      display: block !important;
+      .pro_list {
+        height: 65%;
+      }
+    }
+  }
+  .pro_screen {
+    flex: 0 0 260px;
+    height: 100%;
+    background: #fff;
+    border-right: 1px solid #e8e8e8;
+    box-shadow: 0px 0px 8px 0px #bdbdbd;
+    display: flex;
+    flex-flow: column nowrap;
+    position: relative;
+    .leftContentBox {
+      flex: 1;
+    }
+    .pro_title {
+      padding: 15px 20px 0 15px;
+      .pro_screen_title {
+        font-size: 18px;
+        color: #424242;
+        margin-right: 10px;
+      }
+      .switch {
+        color: #bdbdbd;
+        font-size: 12px;
+      }
+    }
+    .pro_radio {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      padding: 0 20px;
+      label {
+        margin-top: 10px;
+        margin-right: 14px;
+        margin-bottom: 10px;
+        border-radius: 12px;
+        border-color: #f5f5f5;
+        color: #bdbdbd;
+        height: 24px;
+        line-height: 24px;
+        font-size: 14px;
+      }
+      .ant-radio-button-wrapper-checked {
+        background-color: #64b5f6;
+        color: #fff;
+        box-shadow: none;
+      }
+    }
+    .pro_tag {
+      padding: 0 20px;
+      .pro_tag_title {
+        font-size: 14px;
+        color: #424242;
+      }
+      .icon_plus {
+        color: #bdbdbd;
+        margin-left: 4px;
+        cursor: pointer;
+      }
+      .null {
+        color: #bdbdbd;
+        font-size: 12px;
+      }
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 10px;
+        li {
+          position: relative;
+          border: 1px solid;
+          cursor: pointer;
+          width: 29%;
+          text-align: center;
+          border-radius: 3px;
+          margin-bottom: 8px;
+          margin-right: 8px;
+        }
+        li:hover {
+          .labelCen {
+            font-size: 12px;
+            display: inline-block;
+            background: rgba(66, 66, 66, 0.5);
+            color: #fff;
+            text-align: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+          }
+        }
+        .labelCen {
+          display: none;
+        }
+      }
+    }
+    .border_bottom {
+      height: 1px;
+      border-bottom: 1px solid #f5f5f5;
+      margin-top: 20px;
+    }
+    .pro_list::-webkit-scrollbar {
+      width: 0 !important;
+    }
+    .pro_list {
+      margin-top: 20px;
+      margin-bottom: 60px;
+      padding: 0 20px;
+      flex: 1;
+      overflow-x: hidden;
+      overflow-y: auto;
+      .textMore {
+        font-size: 12px;
+        display: block;
+        background: whitesmoke;
+        color: #757575;
+        border: 1px solid #eee;
+        padding-left: 10px;
+        border-radius: 3px;
+        margin-bottom: 8px;
+        height: 30px;
+        line-height: 30px;
+        width: 214px;
+        position: relative;
+        .projectCen {
+          display: none;
+        }
+      }
+      .textMore:hover {
+        .projectCen {
+          position: absolute;
+          top: 0;
+          left: 0;
+          text-align: center;
+          border-radius: 3px;
+          width: 100%;
+          height: 100%;
+          z-index: 40;
+          color: #fff;
+          background: rgba(66, 66, 66, 0.5);
+          display: block;
+          cursor: pointer;
+        }
+      }
+    }
+    .bottom_button {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      div {
+        flex: 1;
+        height: 40px;
+        display: inline-block;
+        color: #bdbdbd;
+        text-align: center;
+        line-height: 40px;
+        box-shadow: 0px -1px 4px 0px #bdbdbd;
+        font-size: 14px;
+        cursor: pointer;
+        background-color: #fff;
+      }
+      .last_button {
+        background-color: #bdbdbd;
+        color: #fff;
+      }
+    }
+  }
+  .pro_statistics_content {
+    flex: 1;
+    padding: 16px 0 16px 30px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    min-width: 900px;
+    .pro_statistics_top {
+      //       height: 60px;
+      .pro_total {
+        min-width: 80px;
+        /* max-width: 100px; */
+        padding: 0 10px;
+        /* margin-left: 20px; */
+        height: 60px;
+        display: inline-block;
+        -webkit-text-align: left;
+        text-align: left;
+
+        span {
+          font-size: 10px;
+          color: #bdbdbd;
+        }
+        div {
+          font-size: 20px;
+          color: #212121;
+          margin-top: 5px;
+          font-weight: bold;
+        }
+      }
+      .borderLeft {
+        width: 1px;
+        height: 40px;
+        background-color: #f5f5f5;
+        margin-right: 20px;
+        display: inline-block;
+      }
+    }
+    .statistics_contain {
+      padding-right: 30px;
+      .task_distribution {
+        // display: flex;
+        // flex-direction: column;
+        // flex-wrap: wrap;
+        h2 {
+          padding: 16px 0 21px 0;
+          font-size: 16px;
+          color: #424242;
+          margin: 0;
+          flex: 0 0 auto;
+        }
+        .taskSpread {
+          //   display: flex;
+          width: 100%;
+          .stateChart {
+            flex: 1;
+            border: 1px solid whitesmoke;
+            width: 50%;
+            .stateChartTitle {
+              display: flex;
+              height: 40px;
+              align-items: center;
+              padding: 0 12px;
+              position: relative;
+              span {
+                flex: 1;
+                color: #424242;
+                font-size: 16px;
+              }
+              .stateOut {
+                flex: 0 0 auto;
+                margin-top: 8px;
+                i {
+                  color: #bdbdbd;
+                  font-size: 20px;
+                  width: 20px;
+                  height: 20px;
+                  cursor: pointer;
+                }
+              }
+            }
+            .stateChartBox {
+              // width: 100%;
+              // height: 300px;
+              // text-align: center;
+              // border-top: 1px solid whitesmoke;
+              // position: relative;
+              flex: 1;
+              border: 1px solid whitesmoke;
+              width: 100%;
+              //       margin-left: 40px;
+              #chart1 {
+                // width: "50%";
+                // left: "0";
+                // position: "absolute";
+                // top: "0";
+                // bottom: "0";
+                width: 100%;
+                height: 300px;
+              }
+              .chartList {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                width: 50%;
+                position: absolute;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                .chartBox {
+                  display: flex;
+                  align-items: center;
+                  margin-bottom: 10px;
+                  .chartDian {
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                  }
+                  .chartName {
+                    font-size: 14px;
+                    padding-left: 15px;
+                  }
+                  .chartNum {
+                    font-size: 14px;
+                    padding-left: 20px;
+                  }
+                }
+              }
+            }
+          }
+          .projectChart {
+            //     flex: 1;
+            //     border: 1px solid whitesmoke;
+            //     //     margin-left: 40px;
+            //     width: 100%;
+            border: 1px solid whitesmoke;
+            width: calc(50% - 20px);
+            float: left;
+            .projectChartTitle {
+              display: flex;
+              height: 40px;
+              align-items: center;
+              padding: 0 12px;
+              position: relative;
+              span {
+                flex: 1;
+                color: #424242;
+                font-size: 16px;
+              }
+              .projectOut {
+                flex: 0 0 auto;
+                margin-top: 5px;
+                i {
+                  color: #bdbdbd;
+                  font-size: 20px;
+                  width: 20px;
+                  height: 20px;
+                  cursor: pointer;
+                }
+              }
+            }
+            .projectChartBox {
+              width: 100%;
+              height: 300px;
+              text-align: center;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              border-top: 1px solid whitesmoke;
+              position: relative;
+              #chart2 {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+      .backlog_statistics {
+        h2 {
+          padding: 40px 0 20px 0;
+          margin: 0;
+          font-size: 16px;
+          color: #424242;
+          width: 100%;
+          //   float: left;
+        }
+        .waitChart {
+          //   display: flex;
+          .wait1 {
+            //     flex: 1;
+            //     display: flex;
+            float: left;
+            justify-content: center;
+            height: 300px;
+            align-items: center;
+            width: calc(50% - 20px);
+          }
+          .wait2 {
+            //     flex: 1;
+            //     display: flex;
+            //     justify-content: center;
+            //     align-items: center;
+            height: 300px;
+            float: left;
+            width: calc(50% - 20px);
+            margin-left: 40px;
+          }
+        }
+      }
+      .taskProgess {
+        h3 {
+          padding: 40px 0 20px 0;
+          margin: 0;
+          font-size: 16px;
+          color: #424242;
+          width: 100%;
+          //   float: left;
+        }
+        .progessBox {
+          display: flex;
+          flex-direction: column;
+          border: 1px solid whitesmoke;
+          padding: 0 10px 20px 10px;
+          .progessTitle {
+            flex: 0 0 44px;
+            display: flex;
+            align-items: center;
+            .progessTime {
+              flex: 1;
+              padding-left: 5px;
+            }
+            .timeBox {
+              flex: 0 0 auto;
+              ul {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                li {
+                  margin-left: 10px;
+                  cursor: pointer;
+                  position: relative;
+                  text-align: center;
+                  .text {
+                    font-size: 12px;
+                    color: #bdbdbd;
+                  }
+                  .textColor {
+                    color: #64b5f6;
+                  }
+                  .textLine {
+                    width: 10px;
+                    height: 2px;
+                    background: #64b5f6;
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    margin-left: -5px;
+                  }
+                }
+              }
+            }
+          }
+          .progessChart {
+            width: 100%;
+            height: 500px;
+            text-align: center;
+            //     display: flex;
+            //     justify-content: center;
+            //     align-items: center;
+            padding: 30px 0 0 0;
+            position: relative;
+            #chartProgess {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.ant-radio-button-wrapper:not(:first-child):before {
+  width: 0;
+}
+.ant-checkbox-checked .ant-checkbox-inner,
+.ant-checkbox-indeterminate .ant-checkbox-inner {
+  background-color: #64b5f6;
+  border-color: #64b5f6;
+}
+.clearfix {
+  zoom: 1;
+} /*==for IE6/7 Maxthon2==*/
+.clearfix:after {
+  clear: both;
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  visibility: hidden;
+} /*==for FF/chrome/opera/IE8==*/

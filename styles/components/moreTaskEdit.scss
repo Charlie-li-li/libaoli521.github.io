@@ -1,0 +1,22 @@
+.cpet_moreTaskEdit{
+  display: inline;
+}
+.dateBox{
+  flex:1;
+  .ant-calendar-picker{
+    width:100%;
+  }
+  .ant-input{
+    border:none;
+  }
+}
+.timeBox{
+  flex:1;
+  .ant-time-picker {
+    width:100%;
+  }
+  .ant-time-picker-input{
+    border:none;
+  }
+}
+
